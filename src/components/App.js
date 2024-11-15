@@ -4,13 +4,13 @@ import PlantForm from "../components/PlantForm";
 import Search from "../components/Search";
 import "../index.css";
 
-function App() {
+function App() {1
   const [plants, setPlants] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
 
   // Fetch plants from JSON server
   useEffect(() => {
-    fetch("http://localhost:6001/plants")
+    fetch("https://code-challenge-2-phase-2-15q4.onrender.com/plants")
       .then((res) => res.json())
       .then(setPlants)
       .catch((error) => console.error("Error fetching plants:", error));
@@ -18,7 +18,7 @@ function App() {
 
   // Add a new plant
   const addPlant = (newPlant) => {
-    fetch("http://localhost:6001/plants", {
+    fetch("https://code-challenge-2-phase-2-15q4.onrender.com/plants", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(newPlant),
@@ -30,7 +30,7 @@ function App() {
 
   // Update plant price
   const updatePlantPrice = (id, newPrice) => {
-    fetch(`http://localhost:6001/plants/${id}`, {
+    fetch(`https://code-challenge-2-phase-2-15q4.onrender.com/plants/${id}`, {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ price: newPrice }),
@@ -44,7 +44,7 @@ function App() {
 
   // Delete a plant
   const deletePlant = (id) => {
-    fetch(`http://localhost:6001/plants/${id}`, { method: "DELETE" })
+    fetch(`https://code-challenge-2-phase-2-15q4.onrender.com/plants/${id}`, { method: "DELETE" })
       .then(() => setPlants(plants.filter((plant) => plant.id !== id)))
       .catch((error) => console.error("Error deleting plant:", error));
   };
@@ -52,7 +52,7 @@ function App() {
   // Toggle sold out
   const toggleSoldOut = (id) => {
     const plant = plants.find((p) => p.id === id);
-    fetch(`http://localhost:6001/plants/${id}`, {
+    fetch(`https://code-challenge-2-phase-2-15q4.onrender.com/plants/${id}`, {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ soldOut: !plant.soldOut }),

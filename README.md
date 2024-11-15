@@ -6,145 +6,103 @@ Use this gif as an example of how the app should work.
 
 ![Demo GIF](https://curriculum-content.s3.amazonaws.com/phase-2/react-hooks-mock-code-challenge-plantshop/plantsy_demo.gif)
 
-## Instructions
+## A React application for managing a plant shop, allowing users to view, add, update, and search for plants. This project utilizes React, a json-server for the backend, and includes full CRUD functionality with a user-friendly interface.
 
-Welcome to Plantsy! You've been tasked with building out some features for the
-admin side of a plant store. The designers have put together the components and
-CSS. Now it's up to you to bring the features to life by adding stateful logic
-as well as persisting data to the backend via our API.
+## Table of Contents
+## 1. Core Features
+## 2.Project Structure
+## 3.Technologies Used
+## 4.Setup and Installation
+## 5.Usage
+## 6.License
 
-Your job will be to make our app work according to the user stories you will
-find the [Core Deliverables](#Core-Deliverables) section.
+## Core Features
+## View All Plants: Displays a list of all available plants with details (name, price, and image).
+## Add a New Plant: Users can submit a form to add a new plant.
+## Search Plants: Search functionality to filter plants by name.
+## Update Plant Price: Edit and update the price of plants, with changes persisted. Using increasing and decreasing buttons at the far right side of the plant page.
+## Mark Plants as Sold Out: Toggle a plant's availability.
+## Delete a Plant: Remove plants from the database.
+## Persistent Data: All changes (add, edit, delete) are saved and persist after refreshing the page.
 
-## Setup
+## Project Structure
+## react-hooks-cc-plantshop-master/
+## |--backend/
+##    |-node-modules
+##    |-db.json
+##    |-package-lock.json
+##    |-package.json
+##    |server.js
+## ├── src/
+## │   ├── components/
+## │   │   ├── App.js
+## │   │   ├── PlantList.js
+## │   │   ├── PlantForm.js
+## │   │   ├── PlantCard.js
+## │   │   ├── Search.js
+## │   │__ index.css
+## │   └── index.js
+## ├── public/
+##     |---images
+##     ├── index.html
+##     ├── favicon.ico
+##     |---logo192.png
+##     |---logo512.png
+##     |---manifest.json
+##     |---robots.txt
+## |--.canvas
+## |--.gitignore
+## |--babel.config.js
+## |--demo.gif
+## |--jest.setup.js
+## ├── package-lock.json
+## ├── package.json
+## ├── README.md
 
-1. Run `npm install` in your terminal.
-2. Run `npm run server`. This will run your backend on port `6001`.
-3. In a new terminal, run `npm start`.
+## Technologies Used
+## React: Frontend library for building the user interface.
+## json-server: A lightweight backend to simulate a REST API.
+## CSS: For styling components.
+## JavaScript (ES6): Core scripting language for logic and DOM manipulation.
 
-Make sure to open [http://localhost:6001/plants](http://localhost:6001/plants)
-in the browser to verify that your backend is working before you proceed!
+## Setup and Installation
+## Follow these steps to set up and run the project locally:
 
-## Endpoints
+## Prerequisites
+## Node.js and npm installed. Download Node.js
+## Git installed. Download Git
+## Steps
+## Clone the Repository.
 
-The base URL for your backend is: `http://localhost:6001`
+## Install Dependencies:
 
-## Core Deliverables
+## RUN CODE:
+## "npm install"
+## Start the Backend Server: Open a terminal and run:
 
-As a user:
+## RUN CODE:
+## "npx json-server --watch db.json --port 3001"
+## Start the React App: In a new terminal, run:
 
-1. When the app starts, I can see all plants.
-2. I can add a new plant to the page by submitting the form.
-3. I can mark a plant as "sold out".
-4. I can search for plants by their name and see a filtered list of plants.
+## RUN CODE:
+## "npm start"
+## Access the App: Open http://localhost:3000 in your browser to view the application.
 
-### Endpoints for Core Deliverables
+## Usage
+## Adding a Plant
+## Fill out the "Add Plant" form with the plant's name, image URL, and price.
+## Click Add Plant to see it appear in the list.
+## Searching for Plants
+## Use the search bar to filter plants by name.
+## Updating Plant Price
+## Click the "Edit" button for a plant and update its price.
+## Click Save to persist the changes.
+## Marking a Plant as Sold Out
+## Click the "Mark as Sold Out" button to update a plant’s availability.
+## Deleting a Plant
+## Click the Delete button to remove a plant.
 
-#### GET /plants
+## License
+## Copyright(C) 2024 Evans Kabiru, Inc.
 
-Example Response:
 
-```json
-[
-  {
-    "id": 1,
-    "name": "Aloe",
-    "image": "./images/aloe.jpg",
-    "price": 15.99
-  },
-  {
-    "id": 2,
-    "name": "ZZ Plant",
-    "image": "./images/zz-plant.jpg",
-    "price": 25.98
-  }
-]
-```
-
-#### POST `/plants`
-
-Required Headers:
-
-```js
-{
-  "Content-Type": "application/json"
-}
-```
-
-Request Object:
-
-```json
-{
-  "name": "string",
-  "image": "string",
-  "price": number
-}
-```
-
-Example Response:
-
-```json
-{
-  "id": 1,
-  "name": "Aloe",
-  "image": "./images/aloe.jpg",
-  "price": 15.99
-}
-```
-
-## Advanced Deliverables
-
-These deliverables are not required to pass the code challenge, but if you have
-the extra time, or even after the code challenge, they are a great way to
-stretch your skills.
-
-You'll have to add additional elements for these features. Feel free to style
-them however you see fit!
-
-> Note: If you are going to attempt these advanced deliverables, please be sure
-> to have a working commit with all the Core Deliverables first!
-
-As a user:
-
-1. I can update the price of a plant and still see the updated price after
-   refreshing the page.
-2. I can delete a plant and it is still gone when I refresh the page.
-
-### Endpoints for Advanced Deliverables
-
-#### PATCH /plants/:id
-
-Required Headers:
-
-```js
-{
-  "Content-Type": "application/json"
-}
-```
-
-Request Object:
-
-```json
-{
-  "price": number
-}
-```
-
-Example Response:
-
-```json
-{
-  "id": 1,
-  "name": "Aloe",
-  "image": "./images/aloe.jpg",
-  "price": 16.99
-}
-```
-
-#### DELETE /plants/:id
-
-Example Response:
-
-```json
-{}
-```

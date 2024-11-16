@@ -2,9 +2,9 @@ import React, { useState, useEffect } from "react";
 import PlantList from "../components/PlantList";
 import PlantForm from "../components/PlantForm";
 import Search from "../components/Search";
-import "../index.css";
+import "../App.css";
 
-function App() {1
+function App() {
   const [plants, setPlants] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
 

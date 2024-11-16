@@ -1,0 +1,23 @@
+.App {
+    text-align: center;
+    margin: 20px;
+  }
+  
+  .plant-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  .plant-card {
+    border: 1px solid #ddd;
+    padding: 10px;
+    width: 200px;
+  }
+  
+  img {
+    width: 100%;
+    height: auto;
+  }
+  

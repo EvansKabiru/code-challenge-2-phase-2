@@ -32,14 +32,23 @@ Use this gif as an example of how the app should work.
 ##    |-db.json
 ##    |-package-lock.json
 ##    |-package.json
-##    |server.js
 ## ├── src/
+## |--- _tests_/
+##          |--- test _suites
+##          |--- AllPlants.test.js
+##          |--- CreatePlant.test.js
+##          |--- InStock.test.js
+##          |--- SearchPlants.test.js
+##          |--- App.test.js
 ## │   ├── components/
 ## │   │   ├── App.js
+## |   |   |---Header.js
 ## │   │   ├── PlantList.js
+## |       |---PlantPage.js
 ## │   │   ├── PlantForm.js
 ## │   │   ├── PlantCard.js
 ## │   │   ├── Search.js
+## |   |   |---App.js
 ## │   │__ index.css
 ## │   └── index.js
 ## ├── public/
@@ -53,6 +62,7 @@ Use this gif as an example of how the app should work.
 ## |--.canvas
 ## |--.gitignore
 ## |--babel.config.js
+## |--db.json
 ## |--demo.gif
 ## |--jest.setup.js
 ## ├── package-lock.json
@@ -96,7 +106,7 @@ Use this gif as an example of how the app should work.
 ## Use the search bar to filter plants by name.
 ## Updating Plant Price
 ## Click the "Edit" button for a plant and update its price.
-## Click Save to persist the changes.
+## Click "Update Price" to persist the changes.
 ## Marking a Plant as Sold Out
 ## Click the "Mark as Sold Out" button to update a plant’s availability.
 ## Deleting a Plant
